@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="bindnorthwind.controller.First"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <List
+                id="idEmpList"
+                headerText="Employees"
+                items="{
+			path: '/Employees',
+			sorter: {
+				path: 'FirstName'
+			}
+		}"
+            >
+                <items>
+                    <StandardListItem
+                        id="idStdList"
+                        title="{FirstName} {LastName}"
+                        description="{Country}"
+                        icon="{path: 'Photo', formatter: '.formatPhotoUrl'}"
+                        iconDensityAware="false"
+                        iconInset="false"
+                    />
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>
